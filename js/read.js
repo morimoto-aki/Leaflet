@@ -1,3 +1,4 @@
+console.log("js reference");
 var map = L.map('mapid').setView([35.710179967079,139.52309261622], 14);
 
 var gsi = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png', {
@@ -13,9 +14,11 @@ var baseMaps = {
   "OpenStreetMap" : osm
 };
 
+console.log("script 作成前");
 var script = document.createElement('script'); //変数名は適当なものにでも
-script.src = "./js/read.js"; //ファイルパス
+script.src = "read.js"; //ファイルパス
 document.body.appendChild(script); //<head>に生成
+console.log("script 作成後")
 
 L.control.layers(baseMaps).addTo(map);
 gsi.addTo(map);
